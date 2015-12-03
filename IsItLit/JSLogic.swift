@@ -11,7 +11,7 @@ import UIKit
 class JSLogic: NSObject {
     
     //BUILD RESPONSE DICTIONARIES
-    func buildResponseDictionaries () -> (responseArrayArray:Array){
+    class func buildResponseDictionaries () -> (Array <Array<String>>){
         
         let noResponse =   ["Then boom, it's lit!",
                             "Here's proof 'hope' does work. It's lit!",
@@ -56,7 +56,7 @@ class JSLogic: NSObject {
     }
     
     //RETURN LIT STATUS
-    func returnLitStatus (yesOrNo:Bool) -> (String){
+    class func returnLitStatus (yesOrNo:Bool) -> (String){
         
         let  responseDictionaries = buildResponseDictionaries()
         
@@ -66,12 +66,12 @@ class JSLogic: NSObject {
         
         if yesOrNo {
             
-            var responseRandomizer = Int(arc4random_uniform(UInt32(yesResponse.count)))
+            let responseRandomizer = Int(arc4random_uniform(UInt32(yesResponse.count)))
             return yesResponse[responseRandomizer]
             
         }else{
             
-            var responseRandomizer = Int(arc4random_uniform(UInt32(noResponse.count)))
+            let responseRandomizer = Int(arc4random_uniform(UInt32(noResponse.count)))
             return noResponse[responseRandomizer]
 
         }
@@ -79,7 +79,7 @@ class JSLogic: NSObject {
     }
     
     //RETURN YES OR NO
-    func returnYesOrNo () -> (Bool){
+    class func returnYesOrNo () -> (Bool){
         
         let responseRandomizer = Int(arc4random_uniform(UInt32(1)))
         return responseRandomizer.toBool()!
@@ -88,9 +88,26 @@ class JSLogic: NSObject {
 }
 
 
+extension UIColor {
+    
+    convenience init(red: Int, green: Int, blue: Int)
+    {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
+    
+    // HEX      let fancySwiftColor = UIColor(red: 0xFF, green: 0xA5, blue: 0)
+    
+}
 
+class JSColors : UIColor {
+    
+    let newSwiftColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
 
-
+}
 
 
 

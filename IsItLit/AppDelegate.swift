@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyButton
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
