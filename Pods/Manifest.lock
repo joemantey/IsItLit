@@ -1,0 +1,18 @@
+PODS:
+  - PureLayout (3.0.1)
+  - SwiftyButton (0.2.0):
+    - SwiftyButton/CustomContent (= 0.2.0)
+  - SwiftyButton/CustomContent (0.2.0):
+    - PureLayout (~> 3.0)
+  - WYInteractiveTransitions (0.2.2)
+
+DEPENDENCIES:
+  - SwiftyButton
+  - WYInteractiveTransitions
+
+SPEC CHECKSUMS:
+  PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  SwiftyButton: 90da6f3ba7037eef779fdfc5ce8aace6d292162c
+  WYInteractiveTransitions: ddf464521ca4534a9d47b74f29e6e0ff561c126d
+
+COCOAPODS: 0.35.0
