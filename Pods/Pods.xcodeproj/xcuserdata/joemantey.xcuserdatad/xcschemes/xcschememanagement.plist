@@ -4,22 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-IsItLit-PureLayout.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-IsItLit-SwiftyButton.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-IsItLit-WYInteractiveTransitions.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-IsItLit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PureLayout.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>WYInteractiveTransitions-WYInteractiveTransitions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -31,6 +31,32 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>69F8E7B91264C9D3FA1676BEECA3B33E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>729E261F380746CB7A7C08D7B9C375E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7E6766666A6D356FC0242C135F94DC19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0D207FB495979CFBDF87445FE7EB1C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C2D975C424CD220823CFC33D6ADA1C97</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,15 +15,56 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yb8-UN-Yrg">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="780"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xt6-MY-dGX" customClass="SwiftyButton" customModule="SwiftyButton">
+                                        <rect key="frame" x="90" y="180" width="420" height="420"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xt6-MY-dGX" secondAttribute="height" multiplier="1:1" id="l79-B4-80m"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="IS IT LIT?">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="72" name="HelveticaNeue-BoldItalic"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.59999999999999998" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="buttonPressDepth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xt6-MY-dGX" firstAttribute="centerY" secondItem="Yb8-UN-Yrg" secondAttribute="centerY" id="Cyw-4k-Kdx"/>
+                                    <constraint firstItem="xt6-MY-dGX" firstAttribute="centerX" secondItem="Yb8-UN-Yrg" secondAttribute="centerX" id="I8Q-9B-ihC"/>
+                                    <constraint firstItem="xt6-MY-dGX" firstAttribute="width" secondItem="Yb8-UN-Yrg" secondAttribute="width" multiplier="0.7" id="q3N-Jc-4gB"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93279504776000977" green="0.93268626928329468" blue="0.93275177478790283" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yb8-UN-Yrg" secondAttribute="bottom" id="0Vz-RQ-zKw"/>
                             <constraint firstItem="Yb8-UN-Yrg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="6PW-Fk-262"/>
@@ -29,9 +72,100 @@
                             <constraint firstItem="Yb8-UN-Yrg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Y1G-u8-osy"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0gn-Zd-NjK">
+            <objects>
+                <viewController id="ydo-zC-Ldf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IXD-gC-ufj"/>
+                        <viewControllerLayoutGuide type="bottom" id="MGd-aF-o2g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="noJ-VI-ZSX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFy-4w-47u">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dtw-CR-nn2" userLabel="Bottom Button Container">
+                                        <rect key="frame" x="0.0" y="640" width="600" height="160"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETw-pN-Bah" customClass="SwiftyButton" customModule="SwiftyButton">
+                                                <rect key="frame" x="90" y="16" width="420" height="128"/>
+                                                <state key="normal" title="Button"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                        <color key="value" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="ETw-pN-Bah" firstAttribute="height" secondItem="Dtw-CR-nn2" secondAttribute="height" multiplier="0.8" id="Dki-WR-QPA"/>
+                                            <constraint firstItem="ETw-pN-Bah" firstAttribute="centerY" secondItem="Dtw-CR-nn2" secondAttribute="centerY" id="Ffc-Me-zSH"/>
+                                            <constraint firstItem="ETw-pN-Bah" firstAttribute="centerX" secondItem="Dtw-CR-nn2" secondAttribute="centerX" id="QEd-ix-ESh"/>
+                                            <constraint firstItem="ETw-pN-Bah" firstAttribute="width" secondItem="Dtw-CR-nn2" secondAttribute="width" multiplier="0.7" id="kUR-zG-Yrp"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KhP-9H-Md2">
+                                        <rect key="frame" x="90" y="190" width="420" height="420"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="KhP-9H-Md2" secondAttribute="height" multiplier="1:1" id="pr4-q7-bth"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KhP-9H-Md2" firstAttribute="centerY" secondItem="xFy-4w-47u" secondAttribute="centerY" id="8fw-fT-cfd"/>
+                                    <constraint firstItem="Dtw-CR-nn2" firstAttribute="leading" secondItem="xFy-4w-47u" secondAttribute="leading" id="Gd6-uW-qjH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dtw-CR-nn2" secondAttribute="trailing" id="PnU-UM-FHm"/>
+                                    <constraint firstItem="Dtw-CR-nn2" firstAttribute="height" secondItem="xFy-4w-47u" secondAttribute="height" multiplier="0.2" id="Xiw-s2-W6X"/>
+                                    <constraint firstItem="KhP-9H-Md2" firstAttribute="centerX" secondItem="xFy-4w-47u" secondAttribute="centerX" id="eMD-Hs-ydq"/>
+                                    <constraint firstItem="KhP-9H-Md2" firstAttribute="width" secondItem="xFy-4w-47u" secondAttribute="width" multiplier="0.7" id="mKX-sw-gTY"/>
+                                    <constraint firstItem="KhP-9H-Md2" firstAttribute="height" secondItem="xFy-4w-47u" secondAttribute="height" id="mgt-xp-Now"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dtw-CR-nn2" secondAttribute="bottom" id="sn4-Em-xT4"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mgt-xp-Now"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xFy-4w-47u" firstAttribute="centerY" secondItem="noJ-VI-ZSX" secondAttribute="centerY" id="FYH-RD-iqg"/>
+                            <constraint firstItem="xFy-4w-47u" firstAttribute="centerX" secondItem="noJ-VI-ZSX" secondAttribute="centerX" id="Mfv-hX-SbT"/>
+                            <constraint firstItem="xFy-4w-47u" firstAttribute="width" secondItem="noJ-VI-ZSX" secondAttribute="width" id="QNM-ht-ll5"/>
+                            <constraint firstItem="xFy-4w-47u" firstAttribute="height" secondItem="noJ-VI-ZSX" secondAttribute="height" id="vg1-Fi-wFu"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1St-z1-Uwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="429"/>
         </scene>
     </scenes>
 </document>

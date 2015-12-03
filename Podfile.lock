@@ -15,4 +15,4 @@ SPEC CHECKSUMS:
   SwiftyButton: 90da6f3ba7037eef779fdfc5ce8aace6d292162c
   WYInteractiveTransitions: ddf464521ca4534a9d47b74f29e6e0ff561c126d
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.39.0
