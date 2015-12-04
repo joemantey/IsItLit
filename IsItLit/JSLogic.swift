@@ -105,7 +105,20 @@ extension UIColor {
 
 class JSColors : UIColor {
     
-    let newSwiftColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+    let redWhite = UIColor(red: 254, green: 220, blue: 222, alpha: 1)
+//    let redLight = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+    let redMedium = UIColor(red: 204, green: 51, blue: 51, alpha: 1)
+    let redDark = UIColor(red: 153, green: 51, blue: 51, alpha: 1)
+    
+    let blueWhite = UIColor(red: 215, green: 227, blue: 255, alpha: 1)
+    let blueLight = UIColor(red: 39, green: 78, blue: 193, alpha: 1)
+    let blueMedium = UIColor(red: 38, green: 64, blue: 134, alpha: 1)
+    let blueDark = UIColor(red: 24, green: 33, blue: 49, alpha: 1)
+    
+    let yellow = UIColor(red: 255, green: 204, blue: 51, alpha: 1)
+    let lightOrange = UIColor(red: 255, green: 51, blue: 0, alpha: 1)
+    let darkOrange = UIColor(red: 134, green: 29, blue: 15, alpha: 1)
+//    let newSwiftColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
 
 }
 

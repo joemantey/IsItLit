@@ -103,7 +103,7 @@ class DetailViewController : UIViewController {
             
             backButton.setTitle("...BUT I WAS REALLY I HOPING IT WAS LIT?", forState: UIControlState.Normal)
             
-            self.view.backgroundColor = UI()
+            self.view.backgroundColor = JSColors.
         }
     }
     //ACTION
