@@ -13,26 +13,19 @@ import SwiftyJSON
 
 class JSGiphyAPIClient: NSObject {
     
-    enum GifType{
-        
-        case YesGIF
-        case NoGIF
-        case QuestionGIF
-    }
     
     
-    func getGif(type: GifType) ->String {
+     func getGif(type: Bool) ->String {
         
         var searchString = ""
         
         switch type{
             
-            case .YesGIF:
+            case true:
                 searchString = "win"
-            case .NoGIF:
+            case false:
                 searchString = "fail"
-            case .QuestionGIF:
-                searchString = "wonder"
+            
         }
         
         
@@ -51,19 +44,18 @@ class JSGiphyAPIClient: NSObject {
         var returnURL = ""
 
         Alamofire.request(.GET, inputURL).validate().responseJSON { response in
-            
             switch response.result {
             
-                case .Success:
-                    if let value = response.result.value {
-                        let json = JSON(value)
-                        let gifURL = json["data"][ "url"]
-                        returnURL = String(gifURL)
-                        print("JSON: \(json)")
-                    }
-                
-                case .Failure(let error):
-                    print(error)
+            case .Success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    let gifURL = json["data"][ "url"]
+                    returnURL = String(gifURL)
+                    print("JSON: \(json)")
+                }
+            
+            case .Failure(let error):
+                print(error)
             }
         }
         

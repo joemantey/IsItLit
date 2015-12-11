@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class JSLogic: NSObject {
     
-    //BUILD RESPONSE DICTIONARIES
+
     class func buildResponseArrays () -> (Array <Array<String>>){
         
         let noResponse = [  "It's like someone died in here.",
@@ -56,8 +57,8 @@ class JSLogic: NSObject {
         
     }
     
-    //RETURN LIT STATUS
-    class func returnLitStatus() -> (responseString: String, yesOrNo: Bool){
+
+    class func returnLitStatus() -> (LitInfo){
         
         let  responseDictionaries = buildResponseArrays()
         
@@ -67,19 +68,27 @@ class JSLogic: NSObject {
         
         if returnYesOrNo() {
             
-            let responseRandomizer = Int(arc4random_uniform(UInt32(yesResponse.count)))
-            return (yesResponse[responseRandomizer], true)
+            let responseRandomizer  = Int(arc4random_uniform(UInt32(yesResponse.count)))
+            
+            let litResponse         = LitInfo(  litStatus: true,
+                                                litString: yesResponse[responseRandomizer],
+                                                litGIFURL: "")
+            
+            return litResponse
             
         }else{
             
-            let responseRandomizer = Int(arc4random_uniform(UInt32(noResponse.count)))
-            return (noResponse[responseRandomizer], false)
+            let responseRandomizer  = Int(arc4random_uniform(UInt32(noResponse.count)))
+            let litResponse         = LitInfo(  litStatus: false,
+                                                litString: noResponse[responseRandomizer],
+                                                litGIFURL: "")
+            return litResponse
 
         }
         
     }
+
     
-    //RETURN YES OR NO
     class func returnYesOrNo () -> (Bool){
         
         let responseRandomizer = Int(arc4random_uniform(UInt32(10)))
@@ -92,7 +101,30 @@ class JSLogic: NSObject {
             
         
     }
+    
+    
+    struct LitInfo {
+        
+        var litStatus   : Bool
+        var litString   : String
+        var litGIFURL   : String?
+    }
 }
 
+/*
+
+yes or no
+
+if yes, set it as yes and grab url
+    
+    want to go before url comes back
+        -they can go, the view will read the struct and make it
+        -when you get to the second view, just ask for the view and refresh when you get it
+
+    want to go after the URL comes back
+        -when they load the view, 
+
+
+*/
 
 

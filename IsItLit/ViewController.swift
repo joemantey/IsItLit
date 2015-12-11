@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyButton
+import MediaPlayer
 
 class ViewController: UIViewController {
 
@@ -22,9 +23,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     @IBAction func litButtonTapped(sender: AnyObject) {
      
-        
     }
 
 }
@@ -33,6 +34,9 @@ class ViewController: UIViewController {
 //YES NO VIEW CONTROLLER
 
 class YesNoViewController : UIViewController {
+    
+    
+    var litInfo : JSLogic.LitInfo!
     
     //OUTLETS
     @IBOutlet weak var backButton: SwiftyButton!
@@ -64,24 +68,28 @@ class YesNoViewController : UIViewController {
     }
     
     
+    override func viewDidAppear(animated: Bool) {
+        getGIFBackground()
+    }
+    
     func setUpView(){
         
         let returnedLitStatus = JSLogic.returnLitStatus()
+        litInfo = returnedLitStatus
      
-        if returnedLitStatus.yesOrNo == true{
+        if returnedLitStatus.litStatus == true{
             
             litTextField.text               = "IT'S LIT!"
-            litDescriptionTextView.text     = returnedLitStatus.responseString;
+            litDescriptionTextView.text     = returnedLitStatus.litString;
 
             backgroundView.backgroundColor  = UIColor.yellow()
-            
             
         }
             
         else{
             
             litTextField.text               = "NO."
-            litDescriptionTextView.text     = returnedLitStatus.responseString;
+            litDescriptionTextView.text     = returnedLitStatus.litString;
             backgroundView.backgroundColor  = UIColor.blueDark()
 
             
@@ -89,7 +97,14 @@ class YesNoViewController : UIViewController {
         }
     }
     
+    func getGIFBackground (){
+        
+
+        
+    }
 }
+    
+
 
 
 // DETAIL VIEW CONTROLLER
