@@ -37,8 +37,8 @@ class YesNoViewController : UIViewController {
     //OUTLETS
     @IBOutlet weak var backButton: SwiftyButton!
     @IBOutlet weak var litTextField: UITextField!
-    @IBOutlet weak var litImageVIew: UIImageView!
-    @IBOutlet weak var moreDetailButton: SwiftyButton!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var litDescriptionTextView: UITextView!
     
     
     //ACTIONS
@@ -46,25 +46,45 @@ class YesNoViewController : UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    @IBAction func moreDetailButtonTapped(sender: AnyObject) {
-        
-        
-    }
+
     
     
     //VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let yesOrNo = JSLogic.returnYesOrNo()
         
-        if yesOrNo {
+        self.setUpView()
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setUpView()
+    }
+    
+    
+    func setUpView(){
+        
+        let returnedLitStatus = JSLogic.returnLitStatus()
+     
+        if returnedLitStatus.yesOrNo == true{
+            
+            litTextField.text               = "IT'S LIT!"
+            litDescriptionTextView.text     = returnedLitStatus.responseString;
+
+            backgroundView.backgroundColor  = UIColor.yellow()
             
             
         }
-        
+            
         else{
+            
+            litTextField.text               = "NO."
+            litDescriptionTextView.text     = returnedLitStatus.responseString;
+            backgroundView.backgroundColor  = UIColor.blueDark()
+
+            
             
         }
     }
@@ -87,6 +107,8 @@ class DetailViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setUpView()
+        
     }
     
      func setUpView(){
@@ -95,15 +117,20 @@ class DetailViewController : UIViewController {
         
         if yesOrNo {
             
-            backButton.setTitle("...BUT HOW LIT IS IT?", forState: UIControlState.Normal)
+            self.questionButton.setTitle("...BUT HOW LIT IS IT?", forState: UIControlState.Normal)
+            
+//            self.view.backgroundColor = JSColors.yellow()
 
         }
             
         else{
             
-            backButton.setTitle("...BUT I WAS REALLY I HOPING IT WAS LIT?", forState: UIControlState.Normal)
+            self.questionButton.setTitle("WAIT, IT'S NOT?", forState: UIControlState.Normal)
+//            self.questionButton.setTitle("...BUT I WAS REALLY I HOPING IT WAS LIT?", forState: UIControlState.Normal)
             
-            self.view.backgroundColor = JSColors.
+//            self.view.backgroundColor = JSColors.blueDark()
+            
+            
         }
     }
     //ACTION
@@ -114,6 +141,6 @@ class DetailViewController : UIViewController {
     
     @IBAction func backButtonTapped(sender: AnyObject) {
         
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
