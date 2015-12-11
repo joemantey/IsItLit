@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyButton
+import Alamofire
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

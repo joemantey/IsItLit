@@ -1,0 +1,6 @@
+framework module Pods_IsItLit {
+  umbrella header "Pods-IsItLit-umbrella.h"
+
+  export *
+  module * { export * }
+}

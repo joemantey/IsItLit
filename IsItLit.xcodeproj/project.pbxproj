@@ -13,7 +13,9 @@
 		38A85D1E1C0FE6F2004F973A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D1C1C0FE6F2004F973A /* Main.storyboard */; };
 		38A85D201C0FE6F2004F973A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D1F1C0FE6F2004F973A /* Assets.xcassets */; };
 		38A85D231C0FE6F2004F973A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D211C0FE6F2004F973A /* LaunchScreen.storyboard */; };
-		38A85D2B1C0FEAC1004F973A /* JSLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D2A1C0FEAC1004F973A /* JSLogic.swift */; settings = {ASSET_TAGS = (); }; };
+		38A85D2B1C0FEAC1004F973A /* JSLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D2A1C0FEAC1004F973A /* JSLogic.swift */; };
+		5D91D1A71C1B562F0002E607 /* JSGiphyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D91D1A61C1B562F0002E607 /* JSGiphyAPIClient.swift */; };
+		5D91D1A91C1B565B0002E607 /* JSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D91D1A81C1B565B0002E607 /* JSExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		38A85D221C0FE6F2004F973A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38A85D241C0FE6F2004F973A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38A85D2A1C0FEAC1004F973A /* JSLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSLogic.swift; sourceTree = "<group>"; };
+		5D91D1A61C1B562F0002E607 /* JSGiphyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSGiphyAPIClient.swift; sourceTree = "<group>"; };
+		5D91D1A81C1B565B0002E607 /* JSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSExtensions.swift; sourceTree = "<group>"; };
 		70C67FB5DDED24E11AA0A642 /* Pods-IsItLit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IsItLit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IsItLit/Pods-IsItLit.debug.xcconfig"; sourceTree = "<group>"; };
 		7F65ED2949166F7874FBB17B /* Pods_IsItLit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IsItLit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,14 +68,40 @@
 			isa = PBXGroup;
 			children = (
 				38A85D181C0FE6F2004F973A /* AppDelegate.swift */,
-				38A85D1A1C0FE6F2004F973A /* ViewController.swift */,
-				38A85D2A1C0FEAC1004F973A /* JSLogic.swift */,
-				38A85D1C1C0FE6F2004F973A /* Main.storyboard */,
+				5D91D1AA1C1B568B0002E607 /* Model */,
+				5D91D1AD1C1B56B50002E607 /* View */,
+				5D91D1AC1C1B569C0002E607 /* Controller */,
 				38A85D1F1C0FE6F2004F973A /* Assets.xcassets */,
-				38A85D211C0FE6F2004F973A /* LaunchScreen.storyboard */,
 				38A85D241C0FE6F2004F973A /* Info.plist */,
 			);
 			path = IsItLit;
+			sourceTree = "<group>";
+		};
+		5D91D1AA1C1B568B0002E607 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				38A85D2A1C0FEAC1004F973A /* JSLogic.swift */,
+				5D91D1A81C1B565B0002E607 /* JSExtensions.swift */,
+				5D91D1A61C1B562F0002E607 /* JSGiphyAPIClient.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5D91D1AC1C1B569C0002E607 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38A85D1A1C0FE6F2004F973A /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5D91D1AD1C1B56B50002E607 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38A85D1C1C0FE6F2004F973A /* Main.storyboard */,
+				38A85D211C0FE6F2004F973A /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		8F67B026FB25BE6DBDEF5011 /* Frameworks */ = {
@@ -212,6 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D91D1A91C1B565B0002E607 /* JSExtensions.swift in Sources */,
+				5D91D1A71C1B562F0002E607 /* JSGiphyAPIClient.swift in Sources */,
 				38A85D1B1C0FE6F2004F973A /* ViewController.swift in Sources */,
 				38A85D191C0FE6F2004F973A /* AppDelegate.swift in Sources */,
 				38A85D2B1C0FEAC1004F973A /* JSLogic.swift in Sources */,
