@@ -10,6 +10,7 @@ import UIKit
 import SwiftyButton
 import MediaPlayer
 
+
 class ViewController: UIViewController {
 
    
@@ -69,7 +70,7 @@ class YesNoViewController : UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
-        getGIFBackground()
+    
     }
     
     func setUpView(){
@@ -84,6 +85,8 @@ class YesNoViewController : UIViewController {
 
             backgroundView.backgroundColor  = UIColor.yellow()
             
+            getGIFBackground(returnedLitStatus.litStatus)
+            
         }
             
         else{
@@ -92,14 +95,22 @@ class YesNoViewController : UIViewController {
             litDescriptionTextView.text     = returnedLitStatus.litString;
             backgroundView.backgroundColor  = UIColor.blueDark()
 
-            
+            getGIFBackground(returnedLitStatus.litStatus)
+
             
         }
     }
     
-    func getGIFBackground (){
+    func getGIFBackground (type: Bool){
         
-
+        let gifURLString = JSGiphyAPIClient().getGif(type)
+        
+        var url: NSURL = NSURL(string: gifURLString)!
+        
+        var gifImage = UIImage.animatedImageWithAnimatedGIFURL(url)
+        
+//        self.view.backgroundColor = UIColor(patternImage: gifImage)
+        
         
     }
 }

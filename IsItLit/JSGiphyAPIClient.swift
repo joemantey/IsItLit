@@ -15,7 +15,7 @@ class JSGiphyAPIClient: NSObject {
     
     
     
-     func getGif(type: Bool) ->String {
+      func getGif(type: Bool) ->String {
         
         var searchString = ""
         
@@ -48,10 +48,11 @@ class JSGiphyAPIClient: NSObject {
             
             case .Success:
                 if let value = response.result.value {
+                    
                     let json = JSON(value)
-                    let gifURL = json["data"][ "url"]
-                    returnURL = String(gifURL)
-                    print("JSON: \(json)")
+                    let gifURL  = json["data", "url"].string
+                    returnURL = gifURL!
+                    print("JSON: \(returnURL)")
                 }
             
             case .Failure(let error):

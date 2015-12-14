@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-IsItLit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -14,7 +19,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftGifOrigin.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>69F8E7B91264C9D3FA1676BEECA3B33E</key>
+		<key>1CDD93427F9BFD9EA43AF6B510387365</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>729E261F380746CB7A7C08D7B9C375E7</key>
+		<key>40352DC330A8E13E80C68BFAE16928E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E6766666A6D356FC0242C135F94DC19</key>
+		<key>432ECC54282C84882B482CCB4CF227FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0D207FB495979CFBDF87445FE7EB1C2</key>
+		<key>86BD9D3438A4D6EB6E609CD6B5CFAF68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2D975C424CD220823CFC33D6ADA1C97</key>
+		<key>873130B1FC4DA66B88F17B6623FEBD4E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9877A52B688D7D111F49C44EDA7DB43E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0B87E6376F8C063FA21F9AD2DF5DF28</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF1AFA9CF1F088862C83824AAE9841A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
