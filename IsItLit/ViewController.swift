@@ -59,6 +59,10 @@ class YesNoViewController : UIViewController {
         super.viewDidLoad()
         
         self.setUpView()
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserver(self, selector: "getGIFBackground", name: "GIFisHere", object: nil)
+
+        
     }
     
     
@@ -85,8 +89,7 @@ class YesNoViewController : UIViewController {
 
             backgroundView.backgroundColor  = UIColor.yellow()
             
-            getGIFBackground(returnedLitStatus.litStatus)
-            
+            JSGiphyAPIClient().getGif(returnedLitStatus.litStatus)
         }
             
         else{
@@ -94,25 +97,35 @@ class YesNoViewController : UIViewController {
             litTextField.text               = "NO."
             litDescriptionTextView.text     = returnedLitStatus.litString;
             backgroundView.backgroundColor  = UIColor.blueDark()
+            
+            JSGiphyAPIClient().getGif(returnedLitStatus.litStatus)
 
-            getGIFBackground(returnedLitStatus.litStatus)
 
             
         }
     }
     
-    func getGIFBackground (type: Bool){
+    func getGIFBackground(){
         
-        let gifURLString = JSGiphyAPIClient().getGif(type)
+        let defaults = NSUserDefaults.standardUserDefaults()
         
-        var url: NSURL = NSURL(string: gifURLString)!
+        if let gifURLString = defaults.stringForKey("string") {
+            
+            let url: NSURL = NSURL(string: gifURLString)!
+            
+            let gifImage = UIImage.animatedImageWithAnimatedGIFURL(url)
+            
+            self.view.backgroundColor = UIColor(patternImage: gifImage)
+
+        }
         
-        var gifImage = UIImage.animatedImageWithAnimatedGIFURL(url)
+       
         
-//        self.view.backgroundColor = UIColor(patternImage: gifImage)
+       
         
         
     }
+    
 }
     
 

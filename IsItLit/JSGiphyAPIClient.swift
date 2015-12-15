@@ -15,7 +15,7 @@ class JSGiphyAPIClient: NSObject {
     
     
     
-      func getGif(type: Bool) ->String {
+      func getGif(type: Bool){
         
         var searchString = ""
         
@@ -25,43 +25,48 @@ class JSGiphyAPIClient: NSObject {
                 searchString = "win"
             case false:
                 searchString = "fail"
-            
-        }
         
+        }
         
         let baseURL     = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
         let searchURL   = baseURL + searchString
         
-        let gifURL = completeGIFRequest(searchURL)
-
-        return gifURL
-    }
-    
-    
-    
-    func completeGIFRequest(inputURL: String) ->String {
         
         var returnURL = ""
-
-        Alamofire.request(.GET, inputURL).validate().responseJSON { response in
+        
+        
+        Alamofire.request(.GET, searchURL).validate().responseJSON { response in
             switch response.result {
-            
+                
             case .Success:
                 if let value = response.result.value {
                     
                     let json = JSON(value)
                     let gifURL  = json["data", "url"].string
                     returnURL = gifURL!
-                    print("JSON: \(returnURL)")
+                    
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setValue(returnURL, forKey: GIFUrl.urlString)
+                    
+                    let nc = NSNotificationCenter.defaultCenter()
+                    nc.postNotificationName("GIFisHere", object: nil)
                 }
-            
+                
             case .Failure(let error):
                 print(error)
+                
             }
         }
-        
-        return returnURL
+    
     }
+
+    
+    enum GIFUrl {
+        
+        static let urlString = "string"
+    }
+        
+    
     
     
     
