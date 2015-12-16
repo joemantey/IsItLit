@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 
-class JSGiphyAPIClient: NSObject {
+public class JSGiphyAPIClient: NSObject {
     
     
     
@@ -40,28 +40,34 @@ class JSGiphyAPIClient: NSObject {
                 
             case .Success:
                 if let value = response.result.value {
-                    
+                
                     let json = JSON(value)
-                    let gifURL  = json["data", "url"].string
+                    
+                    print(json)
+                    let gifURL  = json["data","image_original_url"].string
+                    
+                    
                     returnURL = gifURL!
+                    
+                    
+                    
+                    
                     
                     let defaults = NSUserDefaults.standardUserDefaults()
                     defaults.setValue(returnURL, forKey: GIFUrl.urlString)
                     
                     let nc = NSNotificationCenter.defaultCenter()
                     nc.postNotificationName("GIFisHere", object: nil)
-                }
+            }
                 
             case .Failure(let error):
                 print(error)
-                
             }
         }
-    
     }
 
     
-    enum GIFUrl {
+    public enum GIFUrl {
         
         static let urlString = "string"
     }

@@ -44,6 +44,7 @@ class YesNoViewController : UIViewController {
     @IBOutlet weak var litTextField: UITextField!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var litDescriptionTextView: UITextView!
+    @IBOutlet weak var gifImageView: UIImageView!
     
     
     //ACTIONS
@@ -57,7 +58,7 @@ class YesNoViewController : UIViewController {
     //VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         self.setUpView()
         let nc = NSNotificationCenter.defaultCenter()
         nc.addObserver(self, selector: "getGIFBackground", name: "GIFisHere", object: nil)
@@ -113,9 +114,14 @@ class YesNoViewController : UIViewController {
             
             let url: NSURL = NSURL(string: gifURLString)!
             
-            let gifImage = UIImage.animatedImageWithAnimatedGIFURL(url)
+//            let gifImage : = UIImage.animatedImageWithAnimatedGIFURL(url)
             
-            self.view.backgroundColor = UIColor(patternImage: gifImage)
+            backgroundView.backgroundColor = UIColor.clearColor()
+//            let block: SDWebImageCompletionBlock! = {(image: UIImage!, error: NSError!, cacheType: SDImageCacheType!, imageURL: NSURL!) -> Void in
+//                println(self)
+//            }
+            
+            self.gifImageView.sd_setImageWithURL(url, completed: nil)
 
         }
         

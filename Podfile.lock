@@ -1,6 +1,9 @@
 PODS:
   - Alamofire (3.1.3)
   - PureLayout (3.0.1)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
   - SwiftGifOrigin (1.5.1)
   - SwiftyButton (0.2.0):
     - SwiftyButton/CustomContent (= 0.2.0)
@@ -11,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - SDWebImage
   - SwiftGifOrigin
   - SwiftyButton
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
@@ -28,6 +32,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SwiftGifOrigin: 2dd51f087f77b676e75bb572f521e06e9ced6c58
   SwiftyButton: 90da6f3ba7037eef779fdfc5ce8aace6d292162c
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a

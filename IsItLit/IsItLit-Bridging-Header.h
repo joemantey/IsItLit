@@ -10,5 +10,6 @@
 #define IsItLit_Bridging_Header_h
 
 #import "UIImage+animatedGIF.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif /* IsItLit_Bridging_Header_h */

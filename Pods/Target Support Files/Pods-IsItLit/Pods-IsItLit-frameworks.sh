@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-IsItLit/Alamofire.framework"
   install_framework "Pods-IsItLit/PureLayout.framework"
+  install_framework "Pods-IsItLit/SDWebImage.framework"
   install_framework "Pods-IsItLit/SwiftGifOrigin.framework"
   install_framework "Pods-IsItLit/SwiftyButton.framework"
   install_framework "Pods-IsItLit/SwiftyJSON.framework"
@@ -94,6 +95,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-IsItLit/Alamofire.framework"
   install_framework "Pods-IsItLit/PureLayout.framework"
+  install_framework "Pods-IsItLit/SDWebImage.framework"
   install_framework "Pods-IsItLit/SwiftGifOrigin.framework"
   install_framework "Pods-IsItLit/SwiftyButton.framework"
   install_framework "Pods-IsItLit/SwiftyJSON.framework"

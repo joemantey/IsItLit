@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftGifOrigin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1CDD93427F9BFD9EA43AF6B510387365</key>
+		<key>0975631F2720794C0CEC37610B1D625F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40352DC330A8E13E80C68BFAE16928E4</key>
+		<key>29C73500EC0A403D7ACB65F15317276A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,27 +67,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86BD9D3438A4D6EB6E609CD6B5CFAF68</key>
+		<key>69974B7BB2AC5CFA253D0909702F9794</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>873130B1FC4DA66B88F17B6623FEBD4E</key>
+		<key>7FBF3BE9C2E4F1B357B64877801B6D7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9877A52B688D7D111F49C44EDA7DB43E</key>
+		<key>9098A9E9820CB6716084372A0B18A9EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F0B87E6376F8C063FA21F9AD2DF5DF28</key>
+		<key>C4FBB93BC449F9D9ACB90EF2C884F8D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FF1AFA9CF1F088862C83824AAE9841A2</key>
+		<key>DCB6628068DEDC73B15E26CEFA40657C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E40430B734B547617574C567EC05092F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
