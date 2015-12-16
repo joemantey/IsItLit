@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		308A735854CF2F29689D0CFB /* Pods_IsItLit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65ED2949166F7874FBB17B /* Pods_IsItLit.framework */; };
 		38679E0E1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 38679E0D1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m */; settings = {ASSET_TAGS = (); }; };
+		388AED821C2215BF00B62267 /* YesNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AED811C2215BF00B62267 /* YesNoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		38A85D191C0FE6F2004F973A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D181C0FE6F2004F973A /* AppDelegate.swift */; };
 		38A85D1B1C0FE6F2004F973A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D1A1C0FE6F2004F973A /* ViewController.swift */; };
 		38A85D1E1C0FE6F2004F973A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D1C1C0FE6F2004F973A /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		38679E0C1C1F3D8D00C0ADAB /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		38679E0D1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		38679E121C1F4F7100C0ADAB /* IsItLit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IsItLit-Bridging-Header.h"; sourceTree = "<group>"; };
+		388AED811C2215BF00B62267 /* YesNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesNoViewController.swift; sourceTree = "<group>"; };
 		38A85D151C0FE6F2004F973A /* IsItLit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsItLit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A85D181C0FE6F2004F973A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38A85D1A1C0FE6F2004F973A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				38A85D1A1C0FE6F2004F973A /* ViewController.swift */,
+				388AED811C2215BF00B62267 /* YesNoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D91D1A91C1B565B0002E607 /* JSExtensions.swift in Sources */,
+				388AED821C2215BF00B62267 /* YesNoViewController.swift in Sources */,
 				38679E0E1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m in Sources */,
 				5D91D1A71C1B562F0002E607 /* JSGiphyAPIClient.swift in Sources */,
 				38A85D1B1C0FE6F2004F973A /* ViewController.swift in Sources */,

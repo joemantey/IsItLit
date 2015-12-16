@@ -24,7 +24,7 @@ public class JSGiphyAPIClient: NSObject {
             case true:
                 searchString = "win"
             case false:
-                searchString = "fail"
+                searchString = "epicfail"
         
         }
         
