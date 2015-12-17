@@ -65,21 +65,20 @@ class JSGiphyAPIClient: NSObject {
         let baseURL     = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
         let searchURL   = baseURL + searchString
         
-        
         Alamofire.request(.GET, searchURL).validate().responseJSON { response in
             switch response.result {
                 
             case .Success:
                 if let value = response.result.value {
                 
-                    let json    = JSON(value)
-                    let gifURL  = json["data","image_original_url"].string
-                    
+                    let json                = JSON(value)
+                    let gifURL              = json["data","image_original_url"].string
                     if  (gifURL != nil) {
                         StoredGIFURL.string = gifURL!
+                        
                     }
-
-                    let notificationCenter = NSNotificationCenter.defaultCenter()
+                    
+                    let notificationCenter  = NSNotificationCenter.defaultCenter()
                     notificationCenter.postNotificationName("GIFisHere", object: nil)
             }
                 
@@ -124,7 +123,8 @@ struct SearchArrays {
                             "score",
                             "yes",
                             "vicotry",
-                            "yas"]
+                            "yas",
+                            "happy dance"]
     
     let noSearchTerns   = [ "fail",
                             "epicfail",
@@ -132,7 +132,8 @@ struct SearchArrays {
                             "falling",
                             "fall",
                             "oops",
-                            "ouch"]
+                            "ouch",
+                            "nope"]
     
     let noResponse = [  "It's like someone died in here.",
         "Not even close.",
@@ -161,7 +162,7 @@ struct SearchArrays {
         "Barely.",
         "I mean, we out here...",
         "Look at your battery meter. That's how lit it is.",
-        "Folks wanna pop off?!",
+        "Folks wanna pop off!",
         "You've got genuine a lituation on your hands!",
         "Stop what you are doing and party!",
         "Are you not entertained?!",
@@ -172,6 +173,7 @@ struct SearchArrays {
         "Go get your destiny!",
         "Lowkey like tyring a Patti Pie for the first time!",
         "It may never be this lit again. Savor this.",
-        "Crossover to the lit side."]
+        "Crossover to the lit side.",
+        "Well, look at you!"]
     
 }
