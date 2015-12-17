@@ -2,12 +2,13 @@
 //  JSExtensions.swift
 //  IsItLit
 //
-//  Created by Norma Smalls-Mantey on 12/11/15.
+//  Created by Joseph Smalls-Mantey on 12/11/15.
 //  Copyright © 2015 Joseph Smalls-Mantey. All rights reserved.
 //
 
 import UIKit
 
+//MARK: Color Extension
 extension UIColor {
     
     convenience init(red: Int, green: Int, blue: Int)
@@ -78,6 +79,8 @@ extension UIColor {
     
 }
 
+
+//MARK: Int to Bool
 extension Int {
     
     func toBool () ->Bool? {

@@ -2,7 +2,7 @@
 //  JSGiphyAPIClient.swift
 //  IsItLit
 //
-//  Created by Norma Smalls-Mantey on 12/11/15.
+//  Created by Joseph Smalls-Mantey on 12/11/15.
 //  Copyright © 2015 Joseph Smalls-Mantey. All rights reserved.
 //
 
@@ -11,19 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 
-struct StoredGIFURL {
-    
-    static var string = ""
-}
-
-
-struct LitInfo {
-    
-    var litStatus   : Bool
-    var litString   : String
-    var litGIFURL   : String?
-}
-
+// MARK: JSGiphyAPIClient
 
 class JSGiphyAPIClient: NSObject {
     
@@ -101,6 +89,39 @@ class JSGiphyAPIClient: NSObject {
     
 }
 
+class JSLogic: NSObject {
+    
+    class func returnYesOrNo () -> (Bool){
+        
+        let responseRandomizer = Int(arc4random_uniform(UInt32(10)))
+        
+        if responseRandomizer > 5 {
+            return true
+        }else{
+            return false
+        }
+    }
+}
+
+
+// MARK: StoredGIFURL
+
+struct StoredGIFURL {
+    
+    static var string = ""
+}
+
+// MARK: LitInfo
+struct LitInfo {
+    
+    var litStatus   : Bool
+    var litString   : String
+    var litGIFURL   : String?
+}
+
+
+
+// MARK: SearchArrays
 
 struct SearchArrays {
     
