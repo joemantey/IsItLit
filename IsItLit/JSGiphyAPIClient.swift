@@ -33,7 +33,6 @@ class JSGiphyAPIClient: NSObject {
         let yesResponse = SearchArrays().yesResponse
         
         if JSLogic.returnYesOrNo() {
-            
             let responseRandomizer  = Int(arc4random_uniform(UInt32(yesResponse.count)))
             let litResponse         = LitInfo(  litStatus: true,
                                                 litString: yesResponse[responseRandomizer],
@@ -41,7 +40,6 @@ class JSGiphyAPIClient: NSObject {
             return litResponse
             
         }else{
-            
             let responseRandomizer  = Int(arc4random_uniform(UInt32(noResponse.count)))
             let litResponse         = LitInfo(  litStatus: false,
                                                 litString: noResponse[responseRandomizer],
@@ -51,7 +49,7 @@ class JSGiphyAPIClient: NSObject {
     }
 
     
-    func getGif(type: Bool){
+    func getGif(type: Bool, viewController: YesNoViewController){
         
         var searchString = ""
         
@@ -62,29 +60,28 @@ class JSGiphyAPIClient: NSObject {
                 searchString = getSearchTerms(type)
         }
         
+        print("Search String"+searchString)
         let baseURL     = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
         let searchURL   = baseURL + searchString
         
+         print("Search URL"+searchURL)
         Alamofire.request(.GET, searchURL).validate().responseJSON { response in
             switch response.result {
-                
-            case .Success:
-                if let value = response.result.value {
-                
-                    let json                = JSON(value)
-                    let gifURL              = json["data","image_original_url"].string
-                    if  (gifURL != nil) {
-                        StoredGIFURL.string = gifURL!
+                case .Success:
+                    if let value = response.result.value {
+                        let json                = JSON(value)
+                        let gifURL              = json["data","image_original_url"].string
+                        if  (gifURL != nil) {
+                            viewController.litInfo.litGIFURL  = gifURL!
+                            viewController.getGIFBackground()
+                        }
                         
-                    }
-                    
-                    let notificationCenter  = NSNotificationCenter.defaultCenter()
-                    notificationCenter.postNotificationName("GIFisHere", object: nil)
-            }
+                        
+                }
                 
-            case .Failure(let error):
-                print(error)
-            }
+                case .Failure(let error):
+                    print(error)
+                }
         }
     }
     

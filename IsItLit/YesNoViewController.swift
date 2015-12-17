@@ -39,8 +39,8 @@ class YesNoViewController : UIViewController {
         
         self.setUpView()
         self.notificationCenter = NSNotificationCenter.defaultCenter()
-        self.notificationCenter.addObserver(self, selector: "getGIFBackground", name: "GIFisHere", object: nil)
-        
+//        self.notificationCenter.addObserver(self, selector: "getGIFBackground", name: "GIFisHere", object: nil)
+//        
         
     }
     
@@ -62,6 +62,11 @@ class YesNoViewController : UIViewController {
         
     }
     
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        dismissViewControllerAnimated(true, completion: nil)
+        super.touchesEnded(touches, withEvent: event)
+    }
+    
     func setUpView(){
         
         let returnedLitStatus = JSGiphyAPIClient.getLitStatus()
@@ -75,7 +80,7 @@ class YesNoViewController : UIViewController {
             backgroundView.backgroundColor  = UIColor.clearColor()
             self.view.backgroundColor       = UIColor.yellow()
             
-            JSGiphyAPIClient().getGif(returnedLitStatus.litStatus)
+            JSGiphyAPIClient().getGif(returnedLitStatus.litStatus, viewController: self)
         }
             
         else{
@@ -85,7 +90,7 @@ class YesNoViewController : UIViewController {
             backgroundView.backgroundColor  = UIColor.clearColor()
             self.view.backgroundColor       = UIColor.blueDark()
 
-            JSGiphyAPIClient().getGif(returnedLitStatus.litStatus)
+            JSGiphyAPIClient().getGif(returnedLitStatus.litStatus, viewController: self)
         }
     }
     
@@ -93,9 +98,9 @@ class YesNoViewController : UIViewController {
     
     func getGIFBackground(){
         
-        if StoredGIFURL.string != ""{
+        if (litInfo.litGIFURL != nil){
             
-            let url: NSURL = NSURL(string: StoredGIFURL.string)!
+            let url: NSURL = NSURL(string: litInfo.litGIFURL!)!
             
             self.gifImageView.sd_cancelCurrentImageLoad()
             self.gifImageView.sd_setImageWithURL(url, completed: nil)
