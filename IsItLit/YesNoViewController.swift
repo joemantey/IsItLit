@@ -36,30 +36,17 @@ class YesNoViewController : UIViewController {
     //VIEW LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setUpView()
-        self.notificationCenter = NSNotificationCenter.defaultCenter()
-//        self.notificationCenter.addObserver(self, selector: "getGIFBackground", name: "GIFisHere", object: nil)
-//        
-        
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
-        
         self.notificationCenter.removeObserver(self)
-
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        
         setUpView()
-    }
-    
-    
-    override func viewDidAppear(animated: Bool) {
-        
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -68,28 +55,20 @@ class YesNoViewController : UIViewController {
     }
     
     func setUpView(){
-        
-        let returnedLitStatus = JSGiphyAPIClient.getLitStatus()
-        litInfo = returnedLitStatus
+        let returnedLitStatus   = JSGiphyAPIClient.getLitStatus()
+        litInfo                 = returnedLitStatus
         
         if returnedLitStatus.litStatus == true{
-            
             litTextField.text               = "IT'S LIT!"
             litDescriptionTextView.text     = returnedLitStatus.litString;
-            
             backgroundView.backgroundColor  = UIColor.clearColor()
             self.view.backgroundColor       = UIColor.yellow()
-            
             JSGiphyAPIClient().getGif(returnedLitStatus.litStatus, viewController: self)
-        }
-            
-        else{
-            
+        }else{
             litTextField.text               = "NO."
             litDescriptionTextView.text     = returnedLitStatus.litString;
             backgroundView.backgroundColor  = UIColor.clearColor()
             self.view.backgroundColor       = UIColor.blueDark()
-
             JSGiphyAPIClient().getGif(returnedLitStatus.litStatus, viewController: self)
         }
     }
@@ -99,9 +78,7 @@ class YesNoViewController : UIViewController {
     func getGIFBackground(){
         
         if (litInfo.litGIFURL != nil){
-            
             let url: NSURL = NSURL(string: litInfo.litGIFURL!)!
-            
             self.gifImageView.sd_cancelCurrentImageLoad()
             self.gifImageView.sd_setImageWithURL(url, completed: nil)
             

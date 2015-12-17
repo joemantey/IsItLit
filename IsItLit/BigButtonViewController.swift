@@ -11,7 +11,7 @@ import SwiftyButton
 import MediaPlayer
 
 
-class ViewController: UIViewController {
+class BigButtonViewController: UIViewController {
 
    
     override func viewDidLoad() {

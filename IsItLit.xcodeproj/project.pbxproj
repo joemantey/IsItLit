@@ -11,7 +11,7 @@
 		38679E0E1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 38679E0D1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m */; settings = {ASSET_TAGS = (); }; };
 		388AED821C2215BF00B62267 /* YesNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AED811C2215BF00B62267 /* YesNoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		38A85D191C0FE6F2004F973A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D181C0FE6F2004F973A /* AppDelegate.swift */; };
-		38A85D1B1C0FE6F2004F973A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D1A1C0FE6F2004F973A /* ViewController.swift */; };
+		38A85D1B1C0FE6F2004F973A /* BigButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D1A1C0FE6F2004F973A /* BigButtonViewController.swift */; };
 		38A85D1E1C0FE6F2004F973A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D1C1C0FE6F2004F973A /* Main.storyboard */; };
 		38A85D201C0FE6F2004F973A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D1F1C0FE6F2004F973A /* Assets.xcassets */; };
 		38A85D231C0FE6F2004F973A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D211C0FE6F2004F973A /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 		388AED811C2215BF00B62267 /* YesNoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YesNoViewController.swift; sourceTree = "<group>"; };
 		38A85D151C0FE6F2004F973A /* IsItLit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IsItLit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A85D181C0FE6F2004F973A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38A85D1A1C0FE6F2004F973A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38A85D1A1C0FE6F2004F973A /* BigButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonViewController.swift; sourceTree = "<group>"; };
 		38A85D1D1C0FE6F2004F973A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38A85D1F1C0FE6F2004F973A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38A85D221C0FE6F2004F973A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		5D91D1AC1C1B569C0002E607 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				38A85D1A1C0FE6F2004F973A /* ViewController.swift */,
+				38A85D1A1C0FE6F2004F973A /* BigButtonViewController.swift */,
 				388AED811C2215BF00B62267 /* YesNoViewController.swift */,
 			);
 			name = Controller;
@@ -257,7 +257,7 @@
 				388AED821C2215BF00B62267 /* YesNoViewController.swift in Sources */,
 				38679E0E1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m in Sources */,
 				5D91D1A71C1B562F0002E607 /* JSGiphyAPIClient.swift in Sources */,
-				38A85D1B1C0FE6F2004F973A /* ViewController.swift in Sources */,
+				38A85D1B1C0FE6F2004F973A /* BigButtonViewController.swift in Sources */,
 				38A85D191C0FE6F2004F973A /* AppDelegate.swift in Sources */,
 				38A85D2B1C0FEAC1004F973A /* JSLogic.swift in Sources */,
 			);
