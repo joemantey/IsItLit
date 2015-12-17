@@ -14,7 +14,8 @@ import MediaPlayer
 class YesNoViewController : UIViewController {
     
     
-    var litInfo : JSLogic.LitInfo!
+    var litInfo : LitInfo!
+    var notificationCenter : NSNotificationCenter!
     
     //OUTLETS
     @IBOutlet weak var backButton: SwiftyButton!
@@ -37,12 +38,18 @@ class YesNoViewController : UIViewController {
         super.viewDidLoad()
         
         self.setUpView()
-        let nc = NSNotificationCenter.defaultCenter()
-        nc.addObserver(self, selector: "getGIFBackground", name: "GIFisHere", object: nil)
+        self.notificationCenter = NSNotificationCenter.defaultCenter()
+        self.notificationCenter.addObserver(self, selector: "getGIFBackground", name: "GIFisHere", object: nil)
         
         
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        self.notificationCenter.removeObserver(self)
+
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -57,7 +64,7 @@ class YesNoViewController : UIViewController {
     
     func setUpView(){
         
-        let returnedLitStatus = JSLogic.returnLitStatus()
+        let returnedLitStatus = JSGiphyAPIClient.getLitStatus()
         litInfo = returnedLitStatus
         
         if returnedLitStatus.litStatus == true{
@@ -65,7 +72,8 @@ class YesNoViewController : UIViewController {
             litTextField.text               = "IT'S LIT!"
             litDescriptionTextView.text     = returnedLitStatus.litString;
             
-            backgroundView.backgroundColor  = UIColor.yellow()
+            backgroundView.backgroundColor  = UIColor.clearColor()
+            self.view.backgroundColor       = UIColor.yellow()
             
             JSGiphyAPIClient().getGif(returnedLitStatus.litStatus)
         }
@@ -74,37 +82,34 @@ class YesNoViewController : UIViewController {
             
             litTextField.text               = "NO."
             litDescriptionTextView.text     = returnedLitStatus.litString;
-            backgroundView.backgroundColor  = UIColor.blueDark()
-            
+            backgroundView.backgroundColor  = UIColor.clearColor()
+            self.view.backgroundColor       = UIColor.blueDark()
+
             JSGiphyAPIClient().getGif(returnedLitStatus.litStatus)
-            
-            
-            
         }
     }
     
+    
+    
     func getGIFBackground(){
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        if let gifURLString = defaults.stringForKey("string") {
+        if StoredGIFURL.string != ""{
             
-            let url: NSURL = NSURL(string: gifURLString)!
+            let url: NSURL = NSURL(string: StoredGIFURL.string)!
             
-            
-            backgroundView.backgroundColor = UIColor(white: 0.000, alpha: 0.10)
-            
-            
+            self.gifImageView.sd_cancelCurrentImageLoad()
             self.gifImageView.sd_setImageWithURL(url, completed: nil)
             
+            if self.litInfo.litStatus{
+                backgroundView.backgroundColor = UIColor(white: 1.000, alpha: 0.10)
+            }else{
+                backgroundView.backgroundColor = UIColor(white: 0.000, alpha: 0.10)
+            }
         }
-        
-        
-        
-        
-        
-        
     }
+    
+    
+    
     
 }
 
