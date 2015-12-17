@@ -13,45 +13,29 @@ import MediaPlayer
 
 class YesNoViewController : UIViewController {
     
-    
+    // MARK: Properties, Outlets and Actions
     var litInfo : LitInfo!
     var notificationCenter : NSNotificationCenter!
     
-    //OUTLETS
     @IBOutlet weak var backButton: SwiftyButton!
     @IBOutlet weak var litTextField: UITextField!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var litDescriptionTextView: UITextView!
     @IBOutlet weak var gifImageView: UIImageView!
     
-    
-    //ACTIONS
     @IBAction func backButtonTapped(sender: AnyObject) {
-        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
-    
-    //VIEW LIFECYCLE
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setUpView()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(true)
-        self.notificationCenter.removeObserver(self)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        setUpView()
-    }
-    
+
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         dismissViewControllerAnimated(true, completion: nil)
         super.touchesEnded(touches, withEvent: event)
+    }
+    
+    // MARK: View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setUpView()
     }
     
     func setUpView(){
@@ -73,8 +57,7 @@ class YesNoViewController : UIViewController {
         }
     }
     
-    
-    
+    // MARK: GIF Loading
     func getGIFBackground(){
         
         if (litInfo.litGIFURL != nil){

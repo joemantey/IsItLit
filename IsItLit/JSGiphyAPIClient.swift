@@ -38,7 +38,6 @@ class JSGiphyAPIClient: NSObject {
                                                 litString: yesResponse[responseRandomizer],
                                                 litGIFURL: "")
             return litResponse
-            
         }else{
             let responseRandomizer  = Int(arc4random_uniform(UInt32(noResponse.count)))
             let litResponse         = LitInfo(  litStatus: false,
@@ -64,7 +63,7 @@ class JSGiphyAPIClient: NSObject {
         let baseURL     = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
         let searchURL   = baseURL + searchString
         
-         print("Search URL"+searchURL)
+        print("Search URL"+searchURL)
         Alamofire.request(.GET, searchURL).validate().responseJSON { response in
             switch response.result {
                 case .Success:
@@ -75,10 +74,7 @@ class JSGiphyAPIClient: NSObject {
                             viewController.litInfo.litGIFURL  = gifURL!
                             viewController.getGIFBackground()
                         }
-                        
-                        
                 }
-                
                 case .Failure(let error):
                     print(error)
                 }
@@ -92,17 +88,14 @@ class JSGiphyAPIClient: NSObject {
         var searchTermArray = []
         
         if type {
-            
             searchTermArray = SearchArrays().yesSearchTerms
         }else{
-            
             searchTermArray = SearchArrays().noSearchTerns
         }
         
-        
         let responseRandomizer  = Int(arc4random_uniform(UInt32(searchTermArray.count)))
         let returnString        = searchTermArray[responseRandomizer]
-        
+    
         return returnString as! (String)
     }
     
