@@ -43,7 +43,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: Bool -> Void) {
+        switch (shortcutItem.type) {
+        case "quickAction" :
+            notifyUser(shortcutItem.localizedTitle)
+        default:
+            break
+        }
+        
+        completionHandler(true)
+    }
 
+    func notifyUser(message: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("YesNoViewController")
+        let rootViewController = self.window!.rootViewController
+        rootViewController?.presentViewController(vc, animated: false, completion: nil)
+    }
 
 }
 
