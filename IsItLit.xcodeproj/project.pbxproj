@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		308A735854CF2F29689D0CFB /* Pods_IsItLit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F65ED2949166F7874FBB17B /* Pods_IsItLit.framework */; };
-		38679E0E1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 38679E0D1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m */; settings = {ASSET_TAGS = (); }; };
-		388AED821C2215BF00B62267 /* YesNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AED811C2215BF00B62267 /* YesNoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		38679E0E1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 38679E0D1C1F3D8D00C0ADAB /* UIImage+animatedGIF.m */; };
+		388AED821C2215BF00B62267 /* YesNoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388AED811C2215BF00B62267 /* YesNoViewController.swift */; };
 		38A85D191C0FE6F2004F973A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D181C0FE6F2004F973A /* AppDelegate.swift */; };
 		38A85D1B1C0FE6F2004F973A /* BigButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A85D1A1C0FE6F2004F973A /* BigButtonViewController.swift */; };
 		38A85D1E1C0FE6F2004F973A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A85D1C1C0FE6F2004F973A /* Main.storyboard */; };
@@ -157,12 +157,16 @@
 		38A85D0D1C0FE6F2004F973A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Joseph Smalls-Mantey";
 				TargetAttributes = {
 					38A85D141C0FE6F2004F973A = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = UHLAE5BT7M;
 					};
 				};
 			};
@@ -298,6 +302,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Smalls-Mantey (UHLAE5BT7M)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -317,10 +322,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				New_Setting = "";
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "IsItLit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -345,6 +351,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Joseph Smalls-Mantey (UHLAE5BT7M)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -358,9 +365,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				New_Setting = "";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "IsItLit-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,9 +382,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = IsItLit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JoeMantey.IsItLit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoeMantey.IsItLit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IsItLit/IsItLit-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -389,9 +398,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = IsItLit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JoeMantey.IsItLit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JoeMantey.IsItLit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IsItLit/IsItLit-Bridging-Header.h";
 			};

@@ -22,14 +22,17 @@ class JSGiphyAPIClient: NSObject {
         
         if JSLogic.returnYesOrNo() {
             let responseRandomizer  = Int(arc4random_uniform(UInt32(yesResponse.count)))
+            let litString           = yesResponse[responseRandomizer]
+
             let litResponse         = LitInfo(  litStatus: true,
-                                                litString: yesResponse[responseRandomizer],
+                                                litString: litString,
                                                 litGIFURL: "")
             return litResponse
         }else{
             let responseRandomizer  = Int(arc4random_uniform(UInt32(noResponse.count)))
+            let litString           = noResponse[responseRandomizer]
             let litResponse         = LitInfo(  litStatus: false,
-                                                litString: noResponse[responseRandomizer],
+                                                litString: litString,
                                                 litGIFURL: "")
             return litResponse
         }
@@ -40,18 +43,18 @@ class JSGiphyAPIClient: NSObject {
         
         var searchString = ""
         
-        switch type{
-            case true:
-                searchString = getSearchTerms(type)
-            case false:
-                searchString = getSearchTerms(type)
-        }
+       
+        searchString = getSearchTerms(type)
         
-        print("Search String"+searchString)
+        
         let baseURL     = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
-        let searchURL   = baseURL + searchString
+        var searchURL   = baseURL + searchString
         
-        print("Search URL"+searchURL)
+        print("Search URL "+searchURL)
+        
+        
+ 
+        searchURL = searchURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         Alamofire.request(.GET, searchURL).validate().responseJSON { response in
             switch response.result {
                 case .Success:
@@ -135,7 +138,8 @@ struct SearchArrays {
                             "yes",
                             "vicotry",
                             "yas",
-                            "happy dance"]
+                            "happy_dance",
+                            "dance"]
     
     let noSearchTerns   = [ "fail",
                             "epicfail",
@@ -144,7 +148,9 @@ struct SearchArrays {
                             "fall",
                             "oops",
                             "ouch",
-                            "nope"]
+                            "nope",
+                            "slip",
+                            "loser"]
     
     let noResponse = [  "It's like someone died in here.",
         "Not even close.",
